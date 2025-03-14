@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,8 +47,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Ruta personalizada para llamar la función de index y mostrar los posteos
+Route::get('/posts', [PostController::class, 'index'])-> name('posts.index'); 
+// Ruta personalizada para crear el registro en la BD de Post
+Route::post('/posts', [PostController::class, 'store'])-> name('posts.store'); 
 
-Route::get('/posts', function () {
-    return view('posts');
-}) -> name('posts.index');
+// Route::get('/posts', function () {
+// });
+
 require __DIR__.'/auth.php';
