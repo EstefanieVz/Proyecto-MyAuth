@@ -20,8 +20,7 @@
                     bg-white shadow-sm focus:border-indigo-200
                      focus:ring focus:ring-red-300 focus:ring-opacity-50 dark: border-gray-600 dark:bg-gray-800 
                     dark:text-white dark:focus:border-indigo-300 dark:focus:ring dark:focus:ring-indigo-200
-                    " placeholder="{{__('What\'s do you think?')}}" name="message">
-                    {{old('message')}}</textarea>
+                    " placeholder="{{__('What\'s do you think?')}}" name="message">{{old('message')}}</textarea>
                     {{-- <input type="text" value="{{old('nombredelcampo')}}"> --}}
                     {{-- Nombre del campo 'message'         $message es el mensaje que esta mostrando al usuario --}}
 
