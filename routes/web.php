@@ -51,6 +51,12 @@ Route::middleware('auth')->group(function () {
 Route::get('/posts', [PostController::class, 'index'])-> name('posts.index'); 
 // Ruta personalizada para crear el registro en la BD de Post
 Route::post('/posts', [PostController::class, 'store'])-> name('posts.store'); 
+// Ruta personalizada para actualizar el registro de la publicación
+Route::get('/posts/{post}/edit', [PostController::class, 'edit'])-> name('posts.edit'); 
+// Ruta personalizada para actualizar el registro de la publicación
+Route::patch('/posts/{post}', [PostController::class, 'update'])-> name('posts.update'); 
+// Ruta personalizada para eliminar el registro de la publicación
+Route::delete('/posts/{post}', [PostController::class, 'destroy'])-> name('posts.destroy'); 
 
 // Route::get('/posts', function () {
 // });
